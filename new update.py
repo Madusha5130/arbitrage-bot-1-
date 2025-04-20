@@ -43,7 +43,7 @@ async def fetch_price(session, url, exchange, symbol):
     return None
 
 async def fetch_top_coins():
-    url = f"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=80"
+    url = f"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=200"
     headers = {"X-CMC_PRO_API_KEY": COINMARKETCAP_API_KEY}
     async with aiohttp.ClientSession() as session:
         async with session.get(url, headers=headers, ssl=ssl_context) as response:
